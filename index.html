@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="main-container">
+        <div class="board-container">
+            <div class="board" id="board">
+                <div class="cell" onclick="handleMove(0)" id="c0"><canvas id="cvs0"></canvas></div>
+                <div class="cell" onclick="handleMove(1)" id="c1"><canvas id="cvs1"></canvas></div>
+                <div class="cell" onclick="handleMove(2)" id="c2"><canvas id="cvs2"></canvas></div>
+                <div class="cell" onclick="handleMove(3)" id="c3"><canvas id="cvs3"></canvas></div>
+                <div class="cell" onclick="handleMove(4)" id="c4"><canvas id="cvs4"></canvas></div>
+                <div class="cell" onclick="handleMove(5)" id="c5"><canvas id="cvs5"></canvas></div>
+                <div class="cell" onclick="handleMove(6)" id="c6"><canvas id="cvs6"></canvas></div>
+                <div class="cell" onclick="handleMove(7)" id="c7"><canvas id="cvs7"></canvas></div>
+                <div class="cell" onclick="handleMove(8)" id="c8"><canvas id="cvs8"></canvas></div>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <div class="status-box">
+                <div class="label">Status</div>
+                <div id="status" class="value">Ready</div>
+            </div>
+            <div class="status-box">
+                <div class="label">Valuation</div>
+                <div id="score" class="value">--</div>
+            </div>
+
+            <div class="control-row">
+                <span class="switch-label">Analysis Mode</span>
+                <label class="switch">
+                    <input type="checkbox" id="analysisToggle" onchange="toggleAnalysis()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="control-row">
+                <span class="switch-label">AI First (O)</span>
+                <label class="switch">
+                    <input type="checkbox" id="aiFirstToggle" onchange="resetGame()">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="select-row">
+                <span class="switch-label">Difficulty</span>
+                <select id="difficulty" onchange="updateUI()">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard" selected>Hard</option>
+                </select>
+            </div>
+
+            <button class="reset-btn" onclick="resetGame()">Reset Game</button>
+
+            <div class="footer-stats">
+                <div class="score-board">
+                    <span style="color:var(--x-color)">X: <span id="winX">0</span></span>
+                    <span style="color:#7f8c8d">Draw: <span id="draws">0</span></span>
+                    <span style="color:var(--o-color)">O: <span id="winO">0</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
